@@ -10,6 +10,9 @@ const connectToDatabase = require('./config/database');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Conectar a la base de datos
+connectToDatabase();
+
 // Configuración de CORS
 const corsOptions = {
   origin: ["http://localhost:5173"],
