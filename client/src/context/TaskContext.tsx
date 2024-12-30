@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 // Definir el tipo de tarea
@@ -20,6 +22,27 @@ interface TaskContextType {
   getTaskById: (id: number) => Promise<Task | null>;
 }
 
+// Configuracion de notificacion
+const showToast = (message: string, type: "success" | "warning" | "error") => {
+  toast[type](message, {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+  });
+};
+
+// Manejador de error
+const handleError = (error: any) => {
+  console.error("API call error:", error);
+  showToast(error.message, "error");
+  throw error;
+};
+
 // Variable de entorno con la URL 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
@@ -33,9 +56,10 @@ export const TaskProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
   const fetchTasks = async () => {
     try {
       const response = await axios.get(`${apiUrl}/tasks`);
+      showToast("Lista de tareas.", "success");
       setTasks(response.data);
     } catch (error) {
-      console.error('Error fetching tasks:', error);
+      handleError(error);
     }
   };
 
@@ -44,7 +68,7 @@ export const TaskProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
       await axios.post(`${apiUrl}/tasks`, newTask);
       fetchTasks();
     } catch (error) {
-      console.error('Error creating task:', error);
+      handleError(error);
     }
   };
 
@@ -53,16 +77,17 @@ export const TaskProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
       await axios.put(`${apiUrl}/tasks/${updatedTask._id}`, updatedTask);
       fetchTasks();
     } catch (error) {
-      console.error('Error updating task:', error);
+      handleError(error);
     }
   };
 
   const deleteTask = async (id: number) => {
     try {
       await axios.delete(`${apiUrl}/tasks/${id}`);
+      showToast("Tarea eliminada exitosamente.", "success");
       fetchTasks();
     } catch (error) {
-      console.error('Error deleting task:', error);
+      handleError(error);
     }
   };
 

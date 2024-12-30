@@ -1,5 +1,6 @@
 import { useTaskContext } from "../../context/TaskContext";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import "./Home.css";
 
 function Home() {
@@ -7,7 +8,7 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white p-5">
+    <div className="bg-white w-full p-5 border">
       <h1 className="text-center">Home</h1>
       <div className="flex justify-end">
         <a href="/task" className="button">
@@ -45,6 +46,7 @@ function Home() {
           ))}
         </ul>
       </div>
+      <ToastContainer />
     </div>
   );
 }

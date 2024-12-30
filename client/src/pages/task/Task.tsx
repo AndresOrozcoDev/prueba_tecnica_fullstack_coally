@@ -25,18 +25,22 @@ function Task() {
     }
   }, [id, tasks]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (id) {
-      updateTask(taskData);
-    } else {
-      createTask(taskData);
+    try {
+      if (id) {
+        await updateTask(taskData);
+      } else {
+        await createTask(taskData);
+      }
+      navigate("/");
+    } catch (error: any) {
+      console.error(error);
     }
-    navigate("/");
   };
 
   return (
-    <div className="bg-white p-5">
+    <div className="bg-white w-full p-5 border">
       <h1 className="text-center">{id ? "Editar Tarea" : "Agregar Tarea"}</h1>
       <form className="px-3 py-5 border" onSubmit={handleSubmit}>
         <div className="form__group">

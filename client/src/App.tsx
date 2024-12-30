@@ -6,11 +6,13 @@ import Task from "./pages/task/Task";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/task/:id?" element={<Task />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <div className="p-5">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/task/:id?" element={<Task />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </div>
   );
 }
 
