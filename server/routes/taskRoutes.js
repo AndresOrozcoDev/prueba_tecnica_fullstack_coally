@@ -1,6 +1,7 @@
 const express = require('express');
 const {
     getTasks,
+    getTaskById,
     createTask,
     updateTask,
     deleteTask
@@ -25,6 +26,33 @@ const router = express.Router();
  *                 $ref: '#/components/schemas/Task'
  */
 router.get('/', getTasks);
+
+/**
+ * @swagger
+ * /api/tasks/{id}:
+ *   get:
+ *     summary: Devuelve los detalles de una tarea específica.
+ *     tags: [Tasks]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Task ID
+ *     responses:
+ *       200:
+ *         description: Task retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Task'
+ *       404:
+ *         description: Task not found
+ *       500:
+ *         description: Error fetching task
+ */
+router.get('/:id', getTaskById);
 
 /**
  * @swagger
