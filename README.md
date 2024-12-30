@@ -10,7 +10,7 @@ El objetivo de este proyecto es desarrollar una aplicación de gestión de tarea
 
 ## Enlaces Importantes
 
-- **Aplicación Desplegada Backend**: [URL del Backend](#)
+- **Aplicación Desplegada Backend**: [Backend Docs](https://prueba-tecnica-fullstack-coally.onrender.com/docs/)
 - **Aplicación Desplegada Frontend**: [Frontend](https://sunny-souffle-83db73.netlify.app/)
 
 ## Funcionalidades
@@ -65,5 +65,5 @@ Crea un archivo `.env` en la raíz de cada proyecto con las siguientes variables
 
 #### Frontend
 ```env
-    REACT_APP_API_URL=http://localhost:5000/api
+    VITE_API_URL=http://localhost:5000/api
 ```

@@ -20,6 +20,9 @@ interface TaskContextType {
   getTaskById: (id: number) => Promise<Task | null>;
 }
 
+// Variable de entorno con la URL 
+const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 // Crear el contexto (inicialmente vacío)
 const TaskContext = createContext<TaskContextType | undefined>(undefined);
 
@@ -29,7 +32,7 @@ export const TaskProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/tasks');
+      const response = await axios.get(`${apiUrl}/tasks`);
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -38,7 +41,7 @@ export const TaskProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
 
   const createTask = async (newTask: Task) => {
     try {
-      await axios.post('http://localhost:5000/api/tasks', newTask);
+      await axios.post(`${apiUrl}/tasks`, newTask);
       fetchTasks();
     } catch (error) {
       console.error('Error creating task:', error);
@@ -47,7 +50,7 @@ export const TaskProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
 
   const updateTask = async (updatedTask: Task) => {
     try {
-      await axios.put(`http://localhost:5000/api/tasks/${updatedTask._id}`, updatedTask);
+      await axios.put(`${apiUrl}/tasks/${updatedTask._id}`, updatedTask);
       fetchTasks();
     } catch (error) {
       console.error('Error updating task:', error);
@@ -56,7 +59,7 @@ export const TaskProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
 
   const deleteTask = async (id: number) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`);
+      await axios.delete(`${apiUrl}/tasks/${id}`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
@@ -70,7 +73,7 @@ export const TaskProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
       return cachedTask;
     }
     try {
-      const response = await axios.get(`http://localhost:5000/api/tasks/${id}`);
+      const response = await axios.get(`${apiUrl}/tasks/${id}`);
       return response.data;
     } catch (error) {
       console.error(`Error fetching task with id ${id}:`, error);

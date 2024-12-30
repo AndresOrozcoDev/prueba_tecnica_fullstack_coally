@@ -18,6 +18,10 @@ const swaggerOptions = {
         url: 'http://localhost:5000',
         description: 'Local server',
       },
+      {
+        url: 'https://prueba-tecnica-fullstack-coally.onrender.com',
+        description: 'Deploy server',
+      }
     ],
     tags: [
       {
