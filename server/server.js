@@ -15,9 +15,9 @@ connectToDatabase();
 
 // Configuración de CORS
 const corsOptions = {
-  origin: ["http://localhost:5173"],
+  origin: ["http://localhost:5173", "https://prueba-tecnica-fullstack-coally.onrender.com/"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: ["Content-Type", "API_KEY"],
+  allowedHeaders: ["Content-Type"]
 };
 
 // Middlewares
