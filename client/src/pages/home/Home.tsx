@@ -17,19 +17,23 @@ function Home() {
       <div className="my-4">
         <ul>
           {tasks.map((task) => (
-            <li className="my-2 px-5 py-3" key={task._id}>
+            <li className="my-2 px-5 py-3 border" key={task._id}>
               <div className="flex flex-col">
                 <p className="title">{task.title}</p>
                 <span className="description">{task.description}</span>
                 <span className="completed">
                   {task.completed ? "Completada" : "Pendiente"}
                 </span>
-                <span className="createdAt">{task.createdAt}</span>
+                <span className="createdAt">
+                  {new Intl.DateTimeFormat("es-ES", {
+                    dateStyle: "medium",
+                  }).format(new Date(task.createdAt))}
+                </span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex flex-wrap gap-2 justify-between">
                 <button className="button" onClick={() => deleteTask(task._id)}>
                   Eliminar
-                </button>
+                </button> 
                 <button
                   className="button"
                   onClick={() => navigate(`/task/${task._id}`)}

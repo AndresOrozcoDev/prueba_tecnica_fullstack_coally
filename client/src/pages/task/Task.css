@@ -1,0 +1,29 @@
+form {
+  width: 100% !important;
+}
+
+form .form__group {
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+
+form .form__group label {
+  margin-top: 0px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+form .group--checkbox {
+    flex-direction: row;
+}
+
+form .group--checkbox label {
+    margin-bottom: 0 !important;
+}
+
+form .group--checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}

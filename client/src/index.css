@@ -6,7 +6,7 @@
   --bg-color: rgb(243, 244, 249);
   --white-color: #fff;
   --black-color: #000;
-  --gray-color: #c3c3c3;
+  --gray-color: rgb(229, 234, 242);
   --border-radius: 8px;
   --blue-ligth-color-primary: rgb(36, 153, 239);
   --blue-dark-color-primary: rgb(26, 119, 205);
@@ -66,4 +66,36 @@ a:hover {
 h1 {
   font-size: 2rem;
   padding-block: 1rem;
+}
+
+.border {
+  border: 1px solid var(--gray-color);
+  border-radius: var(--border-radius);
+  width: min(100%, 400px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+textarea {
+  field-sizing: content;
+}
+
+textarea,
+input[type="checkbox"],
+input[type="text"] {
+  width: 100%;
+  text-align: left;
+  padding-left: 8px;
+  font-weight: 500;
+  height: 40px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--gray-color);
+}
+
+textarea,
+input[type="text"]:focus {
+  width: 100%;
+  outline: 0px;
+  font-weight: 500;
+  background-color: var(--white-color);
+  color: var(--gray-dark-color-secondary);
 }
