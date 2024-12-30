@@ -1,12 +1,17 @@
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/home/Home";
+import NotFound from "./pages/404/404NotFound";
+import Task from "./pages/task/Task";
 
 function App() {
-
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/task" element={<Task />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
