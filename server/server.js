@@ -38,7 +38,5 @@ app.use("/api/tasks", taskRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Swagger docs available at http://localhost:${PORT}/docs`);
-  console.log(
-    `OpenAPI JSON available at http://localhost:${PORT}/openapi.json`
-  );
+  console.log(`OpenAPI JSON available at http://localhost:${PORT}/openapi.json`);
 });
