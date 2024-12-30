@@ -1,0 +1,23 @@
+ul li {
+    border: 1px solid var(--gray-color);
+    border-radius: var(--border-radius);
+}
+
+ul li div .title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--black-color);
+}
+
+ul li div .description {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--gray-color);
+}
+
+ul li div .completed, 
+ul li div .createdAt {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--black-color);
+}
