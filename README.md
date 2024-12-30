@@ -11,7 +11,7 @@ El objetivo de este proyecto es desarrollar una aplicación de gestión de tarea
 ## Enlaces Importantes
 
 - **Aplicación Desplegada Backend**: [URL del Backend](#)
-- **Aplicación Desplegada Frontend**: [URL del Frontend](#)
+- **Aplicación Desplegada Frontend**: [Frontend](https://sunny-souffle-83db73.netlify.app/)
 
 ## Funcionalidades
 
