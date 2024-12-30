@@ -27,5 +27,7 @@ El servicio de Mongoose en mi máquina local está funcionando correctamente, pe
 
 Si deseas probarlo en tu máquina local, es necesario tener un MongoDB local en ejecución o configurar un cluster gratuito de MongoDB Atlas (o cualquier otro servicio de base de datos en la nube) para conectar la aplicación a la base de datos.
 
+[Ver el video](./Task%20Manager%20-%20Google%20Chrome%202024-12-30%2014-35-45.mp4)
+
 ## Autor
 [@AndresOrozcoDev](https://github.com/AndresOrozcoDev)
