@@ -1,36 +1,40 @@
-# Task Manager Frontend
 
-Este repositorio contiene el frontend del proyecto **Task Manager**, desarrollado con **React**, **Vite**, y **TypeScript**. La aplicación permite gestionar tareas mediante una interfaz moderna, intuitiva y responsiva.
+# Task Manager - Frontend
 
-## Características Principales
+## Descripción del Proyecto
 
-- Listado de tareas con detalles como título, estado y fecha de creación.
-- Creación, edición y eliminación de tareas mediante formularios.
-- Marcar tareas como completadas o pendientes.
-- Filtrar tareas por estado (todas, completadas, pendientes).
-- Diseño responsivo compatible con dispositivos móviles y escritorio.
-- Integración con la API REST del backend para operaciones CRUD.
+El frontend de esta aplicación permite a los usuarios interactuar con el backend para gestionar tareas. Incluye una interfaz para mostrar, crear, editar y eliminar tareas de manera sencilla y visualmente atractiva.
 
----
+## Enlaces Importantes
 
-## Requisitos Previos
+- **Aplicación Desplegada**: [Frontend](https://sunny-souffle-83db73.netlify.app/)
 
-Asegúrate de tener instalados los siguientes programas:
+## Funcionalidades
 
-- **Node.js** (v16+ recomendado)  
-  Puedes descargarlo desde [aquí](https://nodejs.org/).
-- **npm** o **yarn** como gestor de paquetes.  
-  Se incluye con la instalación de Node.js.
-- **Git** para clonar el repositorio.  
-  Descárgalo desde [aquí](https://git-scm.com/).
+1. Funcionalidades principales:
+   - Pantalla principal para listar tareas (título, estado, fecha de creación).
+   - Formulario para crear nuevas tareas.
+   - Opciones para editar o eliminar tareas.
+   - Filtro para mostrar tareas completadas, pendientes o todas.
+   - Diseño responsivo para escritorio y dispositivos móviles.
 
----
+2. Especificaciones técnicas:
+   - **Framework**: React.js con Chakra UI o Tailwind CSS.
+   - **Estado global**: Context API o Redux.
+   - **Integración con API del backend**.
+   - **Manejo de errores** con mensajes claros al usuario.
 
-## Variables de Entorno
+## Requerimientos para Ejecución Local
 
-Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:  
+### Prerrequisitos
+
+1. **Node.js** (v16+ recomendado).
+2. **Git** para clonar el repositorio.
+
+### Variables de Entorno
+
+Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
 
 ```env
-VITE_API_URL=http://localhost:5000/api
+    VITE_API_URL=http://localhost:5000/api
 ```
-
